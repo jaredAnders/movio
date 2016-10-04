@@ -15,5 +15,13 @@
  */
 
 @import "materialize/components/color";
-$primary-color: color("green", "lighten-1") !default;
+$primary-color: color("green", "darken-1") !default;
 @import "materialize", "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+body {
+  background: color("grey", "lighten-3");
+}
+::selection {
+  background: color("green", "lighten-3");
+  color: white;
+}
