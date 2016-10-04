@@ -2,16 +2,16 @@
 <html>
 <head>
   <title>Movio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-
   <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Movio</a>
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">movio</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Sass</a></li>
@@ -27,7 +27,7 @@
   </nav>
 
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
