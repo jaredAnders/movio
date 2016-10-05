@@ -41,3 +41,5 @@ gem 'spring',        group: :development
 gem 'rails_12factor', group: :production
 gem 'materialize-sass'
 gem 'simple_form'
+gem 'devise', '4.1.1'
+gem 'jquery-turbolinks'

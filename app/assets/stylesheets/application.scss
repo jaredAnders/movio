@@ -28,6 +28,10 @@ nav {
   background-color: lighten(black,12%);
 }
 
+.button-collapse:hover {
+  cursor: pointer;
+}
+
 .hero {
   background: linear-gradient(rgba(15,0,0,.25), rgba(5,0,0,.75)), url('rocket-launch.jpeg') no-repeat top center;
   background-size: cover;
@@ -39,6 +43,6 @@ nav {
 
 
 ::selection {
-  background: color("green", "lighten-3");
+  background: color("green", "accent-1");
   color: white;
 }

@@ -11,22 +11,25 @@
 
   <nav>
     <div class="nav-wrapper container">
-      <a href="#" class="brand-logo">movio</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <%= link_to 'movio', root_path, class: 'brand-logo' %>
+
+      <a data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Stream</a></li>
         <li><a href="#">Upload</a></li>
-        <li><a href="#">Login/Signup</a></li>
+        <%= link_to "Login/Signup", new_user_session_path %>
       </ul>
-      <ul class="side-nav" id="mobile-demo">
+      <ul class="side-nav" id="mobile-nav">
         <li><a href="#">Stream</a></li>
         <li><a href="#">Upload</a></li>
-        <li><a href="#">Login/Signup</a></li>
+        <%= link_to "Login/Signup", new_user_session_path %>
       </ul>
     </div>
   </nav>
 
-
+  <!-- <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p> -->
   <%= yield %>
 
 </body>
