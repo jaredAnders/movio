@@ -18,5 +18,14 @@
 //= require materialize-sprockets
 
 $(document).on('turbolinks:load', function(){
+
+  //enable sideNav on each page
   $(".button-collapse").sideNav();
-})
+
+  //push page path to google analytics
+  var url = window.location.pathname;
+  dataLayer.push({
+    'event':'pageView',
+    'virtualUrl': url
+  });
+});
