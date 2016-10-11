@@ -20,29 +20,55 @@
   <!-- google tag manager -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVPB8D"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <header>
+    <nav>
+      <div class="nav-wrapper container">
+        <%= link_to 'movio', root_path, class: 'brand-logo' %>
 
-  <nav>
-    <div class="nav-wrapper container">
-      <%= link_to 'movio', root_path, class: 'brand-logo' %>
+        <a data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
 
-      <a data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">Stream</a></li>
+          <li><a href="#">Upload</a></li>
+          <li><%= link_to "Login/Signup", new_user_session_path %></li>
+        </ul>
+        <ul class="side-nav" id="mobile-nav">
+          <li><a href="#">Stream</a></li>
+          <li><a href="#">Upload</a></li>
+          <li><%= link_to "Login/Signup", new_user_session_path %></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Stream</a></li>
-        <li><a href="#">Upload</a></li>
-        <li><%= link_to "Login/Signup", new_user_session_path %></li>
-      </ul>
-      <ul class="side-nav" id="mobile-nav">
-        <li><a href="#">Stream</a></li>
-        <li><a href="#">Upload</a></li>
-        <li><%= link_to "Login/Signup", new_user_session_path %></li>
-      </ul>
-    </div>
-  </nav>
-
+  <main>
   <!-- <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p> -->
   <%= yield %>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">movio</h5>
+          <p class="grey-text text-lighten-4">Front row seats to the future</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><%= link_to "Home", root_path, class: "grey-text text-lighten-3"%></li>
+            <li><%= link_to "Login/Signup", new_user_session_path, class: "grey-text text-lighten-3"%></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2016 Jared Gilbert
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
