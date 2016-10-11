@@ -1,0 +1,10 @@
+<div class="container">
+  <h3>Add a new channel</h3>
+  <%= simple_form_for @channel, url: contributor_channels_path do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :cost %>
+    <br>
+    <%= f.submit "add", class: "waves-effect waves-light btn"%>
+  <% end %>
+</div>

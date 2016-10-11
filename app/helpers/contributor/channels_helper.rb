@@ -1,0 +1,2 @@
+module Contributor::ChannelsHelper
+end
