@@ -1,0 +1,12 @@
+<div class="container">
+  <h2><%= @channel.title %></h2>
+  <%= admin_button %>
+  <p><%= @channel.description %></p>
+
+  <br>
+  <p class="left"><%= number_to_currency @channel.cost %></p>
+  <%= link_to 'Get Started', '#', class: 'waves-effect waves-light btn right' %>
+
+  <br>
+  <br>
+</div>
