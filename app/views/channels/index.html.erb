@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>Channels</h2>
+  <% @channels.each do |channel|%>
+    <h3><%= channel.title %></h3>
+    <p><%= channel.description %></p>
+    <p class="left"><%= channel.cost %></p>
+    <%= link_to 'Get Started', '#', class: 'waves-effect waves-light btn-flat right' %>
+    <br>
+    <br>
+    <hr>
+  <% end %>
+</div>

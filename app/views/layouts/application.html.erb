@@ -28,13 +28,13 @@
         <a data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
 
         <ul class="right hide-on-med-and-down">
-          <li><a href="#">Watch</a></li>
-          <li><a href="#">Upload</a></li>
+          <li><%= link_to "Watch", channels_path %></li>
+          <li><%= link_to "Upload", new_contributor_channel_path %></li>
           <li><%= link_to "Login/Signup", new_user_session_path %></li>
         </ul>
         <ul class="side-nav" id="mobile-nav">
-          <li><a href="#">Watch</a></li>
-          <li><a href="#">Upload</a></li>
+          <li><%= link_to "Watch", channels_path %></li>
+          <li><%= link_to "Upload", new_contributor_channel_path %></li>
           <li><%= link_to "Login/Signup", new_user_session_path %></li>
         </ul>
       </div>
@@ -57,7 +57,7 @@
         <div class="col l4 offset-l2 s12">
           <ul>
             <li><%= link_to "Home", root_path, class: "grey-text text-lighten-3"%></li>
-            <li><a href="#" class="grey-text text-lighten-3">Watch</a></li>
+            <li><%= link_to "Watch", channels_path, class: "grey-text text-lighten-3"%></li>
             <li><%= link_to "Upload", new_contributor_channel_path, class: "grey-text text-lighten-3"%></li>
             <li><%= link_to "Login/Signup", new_user_session_path, class: "grey-text text-lighten-3"%></li>
           </ul>

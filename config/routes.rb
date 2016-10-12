@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'static_pages#index'
+  resources :channels, only: [:index, :show]
   namespace :contributor do
     resources :channels, only: [:new, :create, :show]
   end
