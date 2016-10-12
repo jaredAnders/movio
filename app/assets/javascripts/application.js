@@ -21,6 +21,7 @@ $(document).on('turbolinks:load', function(){
 
   //enable sideNav on each page
   $(".button-collapse").sideNav();
+  $(".materialize-textarea").trigger("autoresize");
 
   //push page path to google analytics
   var url = window.location.pathname;

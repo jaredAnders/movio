@@ -7,7 +7,11 @@ class Contributor::ChannelsController < ApplicationController
 
   def create
     @channel = current_user.channels.create(channel_params)
-    redirect_to contributor_channel_path(@channel)
+    if @channel.valid?
+      redirect_to contributor_channel_path(@channel)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
