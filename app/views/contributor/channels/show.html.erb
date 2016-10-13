@@ -10,31 +10,28 @@
     </div>
   </div>
 
+
+
   <ul class="collection">
     <% @channel.playlists.each do |playlist| %>
       <li class="collection-item">
-        <div class="row valign-wrapper">
-          <div class="col s6">
-            <h5 class="title"><%= playlist.title %></h5>
-          </div>
-          <div class="col s6">
-            <a href="#!" class="secondary-content"><i class="material-icons">add</i></a>
-          </div>
-        </div>
-
+        <h5 class="title"><%= playlist.title %></h5>
         <p>
           <ul>
             <% playlist.videos.each do |video| %>
               <li>
                 <div class="divider"></div>
                 <div class="section">
-                  <h6><%= video.title %></h6>
-                  <span class="truncate"><i><%= video.description %></i></span>
+                  <h6><b><%= video.title %></b></h6>
+                  <span class="truncate"><%= video.description %></span>
                 </div>
               </li>
             <% end %>
+            <li>
+              <a href="#!" class="secondary-content left"><i class="material-icons">add_circle</i></a>
+            </li>
           </ul>
-          <div class="divider"></div>
+
         </p>
         <br>
 
