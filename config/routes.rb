@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root 'static_pages#index'
   resources :channels, only: [:index, :show]
   namespace :contributor do
-    resources :channels, only: [:new, :create, :show]
+    resources :channels, only: [:new, :create, :show] do
+      resources :playlists, only: [:new, :create]
+    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

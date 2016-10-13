@@ -1,3 +1,11 @@
 <div class="container">
-  <h3><%= @channel.title %></h3>
+  <h2><%= @channel.title %></h2>
+  <div class="divider"></div>
+  <h3>Playlists</h3>
+  <ul class="collection">
+    <% @channel.playlists.each do |playlist| %>
+      <li class="collection-item"><%= playlist.title %></li>
+    <% end %>
+  </ul>
+
 </div>

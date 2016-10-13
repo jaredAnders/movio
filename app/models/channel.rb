@@ -1,5 +1,6 @@
 class Channel < ActiveRecord::Base
   belongs_to :user
+  has_many :playlists
 
   validates :title, presence: true
   validates :description, presence: true
