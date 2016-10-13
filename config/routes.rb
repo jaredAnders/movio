@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'static_pages#index'
   resources :channels, only: [:index, :show]
   namespace :contributor do
+    resources :playlists, only: [] do
+      resources :videos, only: [:new, :create]
+    end
     resources :channels, only: [:new, :create, :show] do
       resources :playlists, only: [:new, :create]
     end

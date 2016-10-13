@@ -1,10 +1,44 @@
 <div class="container">
   <h2><%= @channel.title %></h2>
   <div class="divider"></div>
-  <h3>Playlists</h3>
+  <div class="row valign-wrapper">
+    <div class="col s6">
+      <h3>Playlists</h3>
+    </div>
+    <div class="col s6">
+      <a class="btn-floating waves-effect waves-light right"><i class="material-icons">add</i></a>
+    </div>
+  </div>
+
   <ul class="collection">
     <% @channel.playlists.each do |playlist| %>
-      <li class="collection-item"><%= playlist.title %></li>
+      <li class="collection-item">
+        <div class="row valign-wrapper">
+          <div class="col s6">
+            <h5 class="title"><%= playlist.title %></h5>
+          </div>
+          <div class="col s6">
+            <a href="#!" class="secondary-content"><i class="material-icons">add</i></a>
+          </div>
+        </div>
+
+        <p>
+          <ul>
+            <% playlist.videos.each do |video| %>
+              <li>
+                <div class="divider"></div>
+                <div class="section">
+                  <h6><%= video.title %></h6>
+                  <span class="truncate"><i><%= video.description %></i></span>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+          <div class="divider"></div>
+        </p>
+        <br>
+
+      </li>
     <% end %>
   </ul>
 

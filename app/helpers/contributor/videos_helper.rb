@@ -1,0 +1,2 @@
+module Contributor::VideosHelper
+end
