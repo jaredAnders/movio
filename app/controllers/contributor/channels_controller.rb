@@ -1,5 +1,6 @@
 class Contributor::ChannelsController < ApplicationController
   before_action :authenticate_user!
+  before_action :require_auth, only: [:show]
 
   def new
     @channel = Channel.new
@@ -15,10 +16,20 @@ class Contributor::ChannelsController < ApplicationController
   end
 
   def show
-    @channel = Channel.find(params[:id])
   end
 
   private
+
+  def require_auth
+    if current_channel.user != current_playlist
+      render text: 'Unauthorized', status: :unauthorized
+    end
+  end
+
+  helper_method :current_channel
+  def current_channel
+    @current_channel ||= Channel.find(params[:id])
+  end
 
   def channel_params
     params.require(:channel).permit(:title, :description, :cost)

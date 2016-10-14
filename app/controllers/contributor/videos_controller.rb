@@ -15,13 +15,13 @@ class Contributor::VideosController < ApplicationController
 
   def require_auth
     if current_playlist.channel.user != current_user
-      return render text: 'Unauthorized', status: :unauthorized
+      render text: 'Unauthorized', status: :unauthorized
     end
   end
 
   helper_method :current_playlist
   def current_playlist
-    @playlist ||= Playlist.find(params[:playlist_id])
+    @current_playlist ||= Playlist.find(params[:playlist_id])
   end
 
   def video_params

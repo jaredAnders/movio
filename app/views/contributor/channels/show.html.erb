@@ -1,5 +1,5 @@
 <div class="container">
-  <h2><%= @channel.title %></h2>
+  <h2><%= current_channel.title %></h2>
   <div class="divider"></div>
   <div class="row valign-wrapper">
     <div class="col s6">
@@ -13,7 +13,7 @@
 
 
   <ul class="collection">
-    <% @channel.playlists.each do |playlist| %>
+    <% current_channel.playlists.each do |playlist| %>
       <li class="collection-item">
         <h5 class="title"><%= playlist.title %></h5>
         <p>

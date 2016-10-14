@@ -1,7 +1,7 @@
 <div class="container">
   <h2>Add a new playlist</h2>
 
-  <%= simple_form_for @playlist, url:contributor_channel_playlists_path(@channel) do |f| %>
+  <%= simple_form_for @playlist, url:contributor_channel_playlists_path(current_channel) do |f| %>
     <div class="form-inputs">
       <div class="input-field">
         <%= f.input :title %>
