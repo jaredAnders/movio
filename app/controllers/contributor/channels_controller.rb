@@ -21,7 +21,7 @@ class Contributor::ChannelsController < ApplicationController
   private
 
   def require_auth
-    if current_channel.user != current_playlist
+    if current_channel.user != current_user
       render text: 'Unauthorized', status: :unauthorized
     end
   end

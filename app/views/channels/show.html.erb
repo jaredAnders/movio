@@ -26,7 +26,7 @@
             <div class="divider"></div>
             <% playlist.videos.each do |video| %>
               <%= link_to video_path(video), class: "collection-item" do %>
-                <div class="section">
+                <div class="section video-link">
                   <h6><b><%= video.title %></b></h6>
                   <span class="truncate"><%= video.description %></span>
                 </div>
