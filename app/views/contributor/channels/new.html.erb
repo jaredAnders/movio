@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Add a new channel</h2>
+  <h2>Create a new channel</h2>
 
   <%= simple_form_for @channel, url: contributor_channels_path do |f| %>
     <div class="form-inputs">
@@ -12,10 +12,22 @@
       <div class="input-field">
         <%= f.input :cost, input_html: {class: "validate", type: "number", min: "0"} %>
       </div>
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>Upload Image</span>
+          <%= f.input :image, label: false %>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="form-actions col s12">
+        <%= f.button :button, "Create Channel", class: "waves-effect waves-light btn" %>
+      </div>
     </div>
 
-    <div class="form-actions">
-      <%= f.button :button, "Add", class: "waves-effect waves-light btn" %>
-    </div>
   <% end %>
 </div>

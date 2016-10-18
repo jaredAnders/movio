@@ -32,6 +32,6 @@ class Contributor::ChannelsController < ApplicationController
   end
 
   def channel_params
-    params.require(:channel).permit(:title, :description, :cost)
+    params.require(:channel).permit(:title, :description, :cost, :image)
   end
 end

@@ -1,5 +1,4 @@
 <div class="container">
-
   <div class="row">
     <div class="col s9">
       <h2><%= current_channel.title %></h2>
@@ -9,14 +8,16 @@
         <%= admin_button %>
     </div>
   </div>
+  <%= image_tag current_channel.image, class: 'responsive-img' %>
   <p><%= current_channel.description %></p>
 
   <br>
-  <p class="left"><%= number_to_currency current_channel.cost %></p>
-  <%= link_to 'Get Started', '#', class: 'waves-effect waves-light btn right' %>
-
-  <br>
-  <br>
+  <div class="row">
+    <div class="col s12">
+      <p class="left"><%= number_to_currency current_channel.cost %></p>
+      <%= link_to 'Get Started', '#', class: 'waves-effect waves-light btn right' %>
+    </div>
+  </div>
 
   <ul class="collection">
     <% current_channel.playlists.each do |playlist| %>
