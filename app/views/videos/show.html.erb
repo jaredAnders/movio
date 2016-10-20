@@ -1,4 +1,15 @@
 <div class="container">
   <h2><%= current_video.title %></h2>
   <p><%= current_video.description %></p>
+
+  <video id="MY_VIDEO_1" class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9 vjs-fluid" controls
+  preload="auto" width="auto" height="auto" data-setup="{}">
+    <source src="<%= current_video.video.to_s %>" type='video/mp4'>
+    <noscript>
+      <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgradiny to a web browser that
+        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+      </p>
+    </noscript>
+  </video>
 </div>
