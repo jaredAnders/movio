@@ -8,6 +8,15 @@
       <div class="input-field">
         <%= f.input :description %>
       </div>
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>Upload Video</span>
+          <%= f.input :video, label: false %>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
     </div>
 
     <div class="form-actions">

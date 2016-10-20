@@ -25,6 +25,6 @@ class Contributor::VideosController < ApplicationController
   end
 
   def video_params
-    params.require(:video).permit(:title, :description)
+    params.require(:video).permit(:title, :description, :video)
   end
 end
