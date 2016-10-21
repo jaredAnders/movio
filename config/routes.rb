@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'static_pages#index'
-  resources :channels, only: [:index, :show]
+  resources :channels, only: [:index, :show] do
+    resources :subscriptions, only: :create
+  end
   resources :videos, only: [:show]
   namespace :contributor do
     resources :playlists, only: [] do

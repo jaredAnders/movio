@@ -1,7 +1,9 @@
 class Channel < ActiveRecord::Base
+  mount_uploader :image, ImageUploader
+
   belongs_to :user
   has_many :playlists
-  mount_uploader :image, ImageUploader
+  has_many :subscriptions
 
   validates :title, presence: true
   validates :description, presence: true

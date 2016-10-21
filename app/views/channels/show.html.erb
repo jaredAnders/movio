@@ -12,12 +12,18 @@
   <p><%= current_channel.description %></p>
 
   <br>
+
   <div class="row">
     <div class="col s12">
+      <% if current_user && current_user.subscribed?(current_channel) %>
+      <%= link_to 'Continue', '#', class: 'waves-effect waves-light btn right' %>
+      <% else %>
       <p class="left"><%= number_to_currency current_channel.cost %></p>
-      <%= link_to 'Get Started', '#', class: 'waves-effect waves-light btn right' %>
+      <%= link_to 'Get Started', channel_subscriptions_path(current_channel), class: 'waves-effect waves-light btn right', method: :post %>
+      <% end %>
     </div>
   </div>
+
 
   <ul class="collection">
     <% current_channel.playlists.each do |playlist| %>
