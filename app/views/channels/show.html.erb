@@ -24,6 +24,17 @@
     </div>
   </div>
 
+  <% if flash[:alert] %>
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel valign-wrapper red-text red lighten-4">
+          <i class="material-icons">error_outline</i>
+          &nbsp;
+          <%= flash[:alert] %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 
   <ul class="collection">
     <% current_channel.playlists.each do |playlist| %>
