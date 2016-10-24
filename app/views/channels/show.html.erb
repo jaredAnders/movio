@@ -19,19 +19,42 @@
         <%= link_to 'Continue', '#', class: 'waves-effect waves-light btn right' %>
       <% else %>
         <% if current_channel.free? %>
+          <p class="left">FREE</p>
           <%= link_to 'Get Started', channel_subscriptions_path(current_channel), class: 'waves-effect waves-light btn right', method: :post %>
         <% else %>
           <p class="left"><%= number_to_currency current_channel.cost %></p>
-          <span class="right">
-            <%= form_tag channel_subscriptions_path(current_channel) do %>
-              <script src="https://checkout.stripe.com/checkout.js"
-                      class="stripe-button"
-                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                      data-description="<%= current_channel.title %> (<%= number_to_currency current_channel.cost %>)"
-                      data-amount="<%= (current_channel.cost * 100).to_i %>"
-                      data-label="Get Started"></script>
-            <% end %>
-          </span>
+          <%= form_tag channel_subscriptions_path(current_channel) do %>
+            <script src="https://checkout.stripe.com/checkout.js"></script>
+
+            <button id="customButton" class="waves-effect waves-light btn right">Get Started</button>
+
+            <script>
+            var handler = StripeCheckout.configure({
+              key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+              locale: 'auto',
+              token: function(response) {
+                var tokenInput = $("<input type=hidden name=stripeToken />").val(response.id);
+                var emailInput = $("<input type=hidden name=stripeEmail />").val(response.email);
+                $("form").append(tokenInput).append(emailInput).submit();
+              }
+            });
+
+            document.getElementById('customButton').addEventListener('click', function(e) {
+              // Open Checkout with further options:
+              handler.open({
+                name: '<%= current_channel.title %> (<%= number_to_currency current_channel.cost %>)',
+                zipCode: true,
+                amount: <%= (current_channel.cost * 100).to_i %>
+              });
+              e.preventDefault();
+            });
+
+            // Close Checkout on page navigation:
+            window.addEventListener('popstate', function() {
+              handler.close();
+            });
+            </script>
+          <% end %>
         <% end %>
       <% end %>
     </div>
