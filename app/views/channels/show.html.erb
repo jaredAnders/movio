@@ -78,7 +78,7 @@
         <h5 class="title"><%= playlist.title %></h5>
           <div class="collection video-links">
             <div class="divider"></div>
-            <% playlist.videos.each do |video| %>
+            <% playlist.videos.rank(:row_order).each do |video| %>
               <%= link_to video_path(video), class: "collection-item" do %>
                 <div class="section video-link">
                   <h6><b><%= video.title %></b></h6>
