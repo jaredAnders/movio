@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
   resources :videos, only: [:show]
   namespace :contributor do
+    resources :videos, only: [:update]
     resources :playlists, only: [] do
       resources :videos, only: [:new, :create]
     end
