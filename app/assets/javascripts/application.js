@@ -16,6 +16,7 @@
 // require turbolinks
 //= require_tree .
 //= require materialize-sprockets
+//= require jquery-ui
 
 $(function(){
 

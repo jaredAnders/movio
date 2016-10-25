@@ -17,7 +17,7 @@
       <li class="collection-item">
         <h5 class="title"><%= playlist.title %></h5>
         <p>
-          <ul>
+          <ul id="video-list">
             <% playlist.videos.rank(:row_order).each do |video| %>
               <li>
                 <div class="divider"></div>
@@ -39,3 +39,9 @@
   </ul>
 
 </div>
+
+<script>
+  $(function() {
+    $('#video-list').sortable({});
+  });
+</script>
