@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>Profile</h2>
+  <h4>User: <%= current_user.email %></h4>
+
+  <% if current_user.subscribed_channels.present? %>
+    <h5>Subscribed Channels</h5>
+    <ul class="collection">
+      <% current_user.subscribed_channels.each do |channel| %>
+        <li class="collection-item">
+          <%= channel.title %>
+        </li>
+      <% end %>
+    </ul>
+
+  <% end %>
+
+  <% if current_user.channels.present? %>
+    <h5>Created Channels</h5>
+    <ul class="collection">
+      <% current_user.channels.each do |channel| %>
+        <li class="collection-item">
+          <%= channel.title %>
+        </li>
+      <% end %>
+    </ul>
+
+  <% end %>
+</div>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  resource :dashboard, only: [:show]
   root 'static_pages#index'
   resources :channels, only: [:index, :show] do
     resources :subscriptions, only: :create

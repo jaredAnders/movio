@@ -32,14 +32,26 @@
         <a data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
 
         <ul class="right hide-on-med-and-down">
-          <li><%= link_to "Watch", channels_path %></li>
+          <li><%= link_to "Browse", channels_path %></li>
           <li><%= link_to "Upload", new_contributor_channel_path %></li>
-          <li><%= link_to "Login/Signup", new_user_session_path %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "Profile", dashboard_path %></li>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+          <% end %>
         </ul>
         <ul class="side-nav" id="mobile-nav">
-          <li><%= link_to "Watch", channels_path %></li>
+          <li><%= link_to "Browse", channels_path %></li>
           <li><%= link_to "Upload", new_contributor_channel_path %></li>
-          <li><%= link_to "Login/Signup", new_user_session_path %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "Profile", dashboard_path %></li>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+          <% end %>
         </ul>
       </div>
     </nav>
