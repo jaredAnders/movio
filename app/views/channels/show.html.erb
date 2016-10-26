@@ -73,7 +73,7 @@
   <% end %>
 
   <ul class="collection">
-    <% current_channel.playlists.each do |playlist| %>
+    <% current_channel.playlists.rank(:row_order).each do |playlist| %>
       <li class="collection-item">
         <h5 class="title"><%= playlist.title %></h5>
           <div class="collection video-links">
