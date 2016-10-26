@@ -12,9 +12,9 @@
 
 
 
-  <ul class="collection">
+  <ul class="collection" id="playlist-list">
     <% current_channel.playlists.rank(:row_order).each do |playlist| %>
-      <li class="collection-item">
+      <li class="collection-item" data-update-url="<%= contributor_playlist_path(playlist) %>">
         <h5 class="title"><%= playlist.title %></h5>
         <p>
           <ul id="video-list">
@@ -54,8 +54,20 @@
             }
           }
         });
-        // console.log("URL:" + ui.item.data('update-url'));
-        // console.log("Index:" + ui.item.index());
+      }
+    });
+    $('#playlist-list').sortable({
+      update: function(event, ui) {
+        $.ajax({
+          type: 'PUT',
+          url: ui.item.data('update-url'),
+          dataType: 'json',
+          data: {
+            playlist: {
+              row_order_position: ui.item.index()
+            }
+          }
+        });
       }
     });
   });
