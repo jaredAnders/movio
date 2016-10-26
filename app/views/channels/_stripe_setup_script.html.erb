@@ -1,0 +1,26 @@
+<script>
+var handler = StripeCheckout.configure({
+  key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+  locale: 'auto',
+  token: function(response) {
+    var tokenInput = $("<input type=hidden name=stripeToken />").val(response.id);
+    var emailInput = $("<input type=hidden name=stripeEmail />").val(response.email);
+    $("form").append(tokenInput).append(emailInput).submit();
+  }
+});
+
+document.getElementById('customButton').addEventListener('click', function(e) {
+  // Open Checkout with further options:
+  handler.open({
+    name: '<%= current_channel.title %> (<%= number_to_currency current_channel.cost %>)',
+    zipCode: true,
+    amount: <%= (current_channel.cost * 100).to_i %>
+  });
+  e.preventDefault();
+});
+
+// Close Checkout on page navigation:
+window.addEventListener('popstate', function() {
+  handler.close();
+});
+</script>
