@@ -1,6 +1,6 @@
 class Contributor::VideosController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_auth_for_section, only: [:new, :create]
+  before_action :require_auth_for_playlist, only: [:new, :create]
   before_action :require_auth_for_video, only: [:update]
 
   def new
@@ -14,7 +14,7 @@ class Contributor::VideosController < ApplicationController
 
   def update
     current_video.update_attributes(video_params)
-    render text: 'updated!'
+    render text: 'Updated'
   end
 
   private
@@ -29,7 +29,7 @@ class Contributor::VideosController < ApplicationController
     @current_video ||= Video.find(params[:id])
   end
 
-  def require_auth_for_section
+  def require_auth_for_playlist
     if current_playlist.channel.user != current_user
       render text: 'Unauthorized', status: :unauthorized
     end
