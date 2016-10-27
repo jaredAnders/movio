@@ -10,14 +10,12 @@
     </div>
   </div>
 
-  <%= render partial: "contributor/playlists/new" %>
-
   <ul class="collection" id="playlist-list">
     <% current_channel.playlists.rank(:row_order).each do |playlist| %>
       <li class="collection-item" data-update-url="<%= contributor_playlist_path(playlist) %>">
         <h5 class="title"><%= playlist.title %></h5>
         <p>
-          <ul id="video-list">
+          <ul class="video-list">
             <% playlist.videos.rank(:row_order).each do |video| %>
               <li data-update-url="<%= contributor_video_path(video) %>">
                 <div class="divider"></div>
@@ -28,7 +26,7 @@
               </li>
             <% end %>
             <li>
-              <a href="#!" class="secondary-content left"><i class="material-icons">add_circle</i></a>
+              <a class="secondary-content left modal-trigger" href="#modalV"><i class="material-icons">add_circle</i></a>
             </li>
           </ul>
         </p>
@@ -40,9 +38,14 @@
 
 </div>
 
+<!-- render partials for modals -->
+<%= render partial: "contributor/playlists/new" %>
+<%= render partial: "contributor/videos/new" %>
+
+
 <script>
   $(function() {
-    $('#video-list').sortable({
+    $('.video-list').sortable({
       update: function(event, ui) {
         $.ajax({
           type: 'PUT',

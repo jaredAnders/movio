@@ -59,3 +59,15 @@ nav {
 .collection a.collection-item {
   color: rgba(0,0,0,.87);
 }
+
+.close-modal-button {
+  padding: .5em;
+  a {
+    @extend .grey-text, .text-lighten-2;
+    transition: .3s ease-out;
+    &:hover {
+      cursor: pointer;
+      @extend .grey-text, .text-lighten-1;
+    }
+  }
+}

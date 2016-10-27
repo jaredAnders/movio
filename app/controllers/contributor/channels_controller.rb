@@ -17,6 +17,7 @@ class Contributor::ChannelsController < ApplicationController
 
   def show
     @playlist = Playlist.new
+    @video = Video.new
   end
 
   private

@@ -1,0 +1,35 @@
+<div id="modalV" class="modal">
+  <div class="close-modal-button">
+    <a href="#!" class="modal-action modal-close left"><i class="material-icons">cancel</i></a>
+  </div>
+  <div class="modal-content">
+    <h3>Add a new video</h3>
+    <%= simple_form_for @video, url:"#" do |f| %>
+      <div class="form-inputs">
+        <div class="input-field">
+          <%= f.input :title %>
+        </div>
+        <div class="input-field">
+          <%= f.input :description %>
+        </div>
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>Upload Video</span>
+            <%= f.input :video, label: false %>
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect btn-flat red-text left">Cancel</a>
+      <div class="form-actions">
+        <%= f.button :button, "add", class:"waves-effect waves-light btn btn-flat green-text text-accent-4 right" %>
+      </div>
+    </div>
+
+  <% end %>
+</div>

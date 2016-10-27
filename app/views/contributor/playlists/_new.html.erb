@@ -1,22 +1,25 @@
 <div id="modal1" class="modal">
-    <div class="modal-content">
-        <h3>Add a new playlist</h3>
+  <div class="close-modal-button">
+    <a href="#!" class="modal-action modal-close left"><i class="material-icons">cancel</i></a>
+  </div>
+  <div class="modal-content">
+    <h3>Add a new playlist</h3>
 
-        <%= simple_form_for @playlist, url:contributor_channel_playlists_path(current_channel) do |f| %>
-        <div class="form-inputs">
-            <div class="input-field">
-                <%= f.input :title %>
-            </div>
+    <%= simple_form_for @playlist, url:contributor_channel_playlists_path(current_channel) do |f| %>
+    <div class="form-inputs">
+        <div class="input-field">
+            <%= f.input :title %>
         </div>
     </div>
+  </div>
 
-    <div class="modal-footer">
-        <div class="form-actions">
-            <%= f.button :button, "Add", class: "waves-effect waves-light btn" %>
-        </div>
-        <a href="#!" class="modal-action modal-close waves-effect btn-flat red-text left">Cancel</a>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect btn-flat red-text left">Cancel</a>
+    <div class="form-actions">
+      <%= f.button :button, "Add", class: "waves-effect waves-light btn-flat green-text text-accent-4" %>
     </div>
+  </div>
 
-    <% end %>
+  <% end %>
 
 </div>
