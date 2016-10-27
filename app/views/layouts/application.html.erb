@@ -32,26 +32,10 @@
         <a data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
 
         <ul class="right hide-on-med-and-down">
-          <li><%= link_to "Browse", channels_path %></li>
-          <li><%= link_to "Add channel", new_contributor_channel_path %></li>
-          <% if user_signed_in? %>
-            <li><%= link_to "My profile", dashboard_path %></li>
-            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to "Sign up", new_user_registration_path %></li>
-            <li><%= link_to "Sign in", new_user_session_path %></li>
-          <% end %>
+          <%= render partial: "layouts/navlinks" %>
         </ul>
         <ul class="side-nav" id="mobile-nav">
-          <li><%= link_to "Browse", channels_path %></li>
-          <li><%= link_to "Add channel", new_contributor_channel_path %></li>
-          <% if user_signed_in? %>
-            <li><%= link_to "My Profile", dashboard_path %></li>
-            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to "Sign up", new_user_registration_path %></li>
-            <li><%= link_to "Sign in", new_user_session_path %></li>
-          <% end %>
+          <%= render partial: "layouts/navlinks" %>
         </ul>
       </div>
     </nav>
@@ -71,11 +55,8 @@
           <p class="grey-text text-lighten-4">Your front row seat to the future</p>
         </div>
         <div class="col l4 offset-l2 s12">
-          <ul>
-            <li><%= link_to "Home", root_path, class: "grey-text text-lighten-3"%></li>
-            <li><%= link_to "Watch", channels_path, class: "grey-text text-lighten-3"%></li>
-            <li><%= link_to "Upload", new_contributor_channel_path, class: "grey-text text-lighten-3"%></li>
-            <li><%= link_to "Login/Signup", new_user_session_path, class: "grey-text text-lighten-3"%></li>
+          <ul class="footer-links">
+            <%= render partial: "layouts/navlinks" %>
           </ul>
         </div>
       </div>

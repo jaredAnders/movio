@@ -71,3 +71,7 @@ nav {
     }
   }
 }
+
+.footer-links > li > a {
+  @extend .white-text;
+}
