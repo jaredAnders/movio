@@ -1,11 +1,7 @@
 class Contributor::PlaylistsController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_auth_for_channel, only: [:new, :create]
+  before_action :require_auth_for_channel, only: [:create]
   before_action :require_auth_for_playlist, only: [:update]
-
-  def new
-    @playlist = Playlist.new
-  end
 
   def create
     @playlist = current_channel.playlists.create(playlist_params)

@@ -33,9 +33,9 @@
 
         <ul class="right hide-on-med-and-down">
           <li><%= link_to "Browse", channels_path %></li>
-          <li><%= link_to "Upload", new_contributor_channel_path %></li>
+          <li><%= link_to "Add channel", new_contributor_channel_path %></li>
           <% if user_signed_in? %>
-            <li><%= link_to "Profile", dashboard_path %></li>
+            <li><%= link_to "My profile", dashboard_path %></li>
             <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to "Sign up", new_user_registration_path %></li>
@@ -44,9 +44,9 @@
         </ul>
         <ul class="side-nav" id="mobile-nav">
           <li><%= link_to "Browse", channels_path %></li>
-          <li><%= link_to "Upload", new_contributor_channel_path %></li>
+          <li><%= link_to "Add channel", new_contributor_channel_path %></li>
           <% if user_signed_in? %>
-            <li><%= link_to "Profile", dashboard_path %></li>
+            <li><%= link_to "My Profile", dashboard_path %></li>
             <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to "Sign up", new_user_registration_path %></li>

@@ -24,6 +24,9 @@ $(function(){
   $(".button-collapse").sideNav();
   $(".materialize-textarea").trigger("autoresize");
 
+  //enable modals
+  $('.modal-trigger').leanModal();
+
   //push page path to google analytics
   var url = window.location.pathname;
   dataLayer.push({

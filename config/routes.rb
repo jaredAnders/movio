@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       resources :videos, only: [:new, :create]
     end
     resources :channels, only: [:new, :create, :show] do
-      resources :playlists, only: [:new, :create]
+      resources :playlists, only: [:create]
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

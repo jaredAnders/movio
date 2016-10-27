@@ -6,11 +6,11 @@
       <h3>Playlists</h3>
     </div>
     <div class="col s6">
-      <a class="btn-floating waves-effect waves-light right"><i class="material-icons">add</i></a>
+      <a class="btn-floating waves-effect waves-light right modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
     </div>
   </div>
 
-
+  <%= render partial: "contributor/playlists/new" %>
 
   <ul class="collection" id="playlist-list">
     <% current_channel.playlists.rank(:row_order).each do |playlist| %>
