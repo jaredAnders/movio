@@ -4,7 +4,7 @@
   </div>
   <div class="modal-content">
     <h3>Add a new video</h3>
-    <%= simple_form_for @video, url:"#" do |f| %>
+    <%= simple_form_for @video, url:"#", html: {id: 'newVideoForm'} do |f| %>
       <div class="form-inputs">
         <div class="input-field">
           <%= f.input :title %>

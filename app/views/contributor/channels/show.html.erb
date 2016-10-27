@@ -26,7 +26,7 @@
               </li>
             <% end %>
             <li>
-              <a class="secondary-content left modal-trigger" href="#modalV"><i class="material-icons">add_circle</i></a>
+              <a class="secondary-content left modal-trigger new-video-button" href="#modalV" data-video-url="<%= contributor_playlist_videos_path(playlist) %>"><i class="material-icons">add_circle</i></a>
             </li>
           </ul>
         </p>
@@ -45,6 +45,7 @@
 
 <script>
   $(function() {
+
     $('.video-list').sortable({
       update: function(event, ui) {
         $.ajax({
@@ -59,6 +60,7 @@
         });
       }
     });
+
     $('#playlist-list').sortable({
       update: function(event, ui) {
         $.ajax({
@@ -73,5 +75,10 @@
         });
       }
     });
+
+    $('.new-video-button').click(function(){
+      var videoUrl = $(this).data('video-url');
+      $('#newVideoForm').attr('action', videoUrl);
+    })
   });
 </script>

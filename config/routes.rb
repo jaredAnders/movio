@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   namespace :contributor do
     resources :videos, only: [:update]
     resources :playlists, only: [:update] do
-      resources :videos, only: [:new, :create]
+      resources :videos, only: [:create]
     end
     resources :channels, only: [:new, :create, :show] do
       resources :playlists, only: [:create]

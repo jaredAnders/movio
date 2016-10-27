@@ -1,11 +1,7 @@
 class Contributor::VideosController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_auth_for_playlist, only: [:new, :create]
+  before_action :require_auth_for_playlist, only: [:create]
   before_action :require_auth_for_video, only: [:update]
-
-  def new
-    @video = Video.new
-  end
 
   def create
     @video = current_playlist.videos.create(video_params)
