@@ -13,10 +13,11 @@
         <%= f.input :cost, input_html: {class: "validate", type: "number", min: "0"} %>
       </div>
       <div class="file-field input-field">
-        <div class="btn">
-          <span>Upload Image</span>
+        <a class="btn">
+          <i class="material-icons left">file_upload</i>
+          Image
           <%= f.input :image, label: false %>
-        </div>
+        </a>
         <div class="file-path-wrapper">
           <input class="file-path validate" type="text">
         </div>
@@ -25,7 +26,7 @@
     </div>
     <div class="row">
       <div class="form-actions col s12">
-        <%= f.button :button, "Create Channel", class: "waves-effect waves-light btn" %>
+        <%= f.button :button, "Create", class: "waves-effect waves-light btn right" %>
       </div>
     </div>
 

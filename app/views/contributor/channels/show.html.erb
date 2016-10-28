@@ -1,12 +1,26 @@
 <div class="container">
   <h2><%= current_channel.title %></h2>
+  <p><%= current_channel.description %></p>
   <div class="divider"></div>
   <div class="row valign-wrapper">
-    <div class="col s6">
+    <!-- <div class="col s6">
       <h3>Playlists</h3>
     </div>
     <div class="col s6">
       <a class="btn-floating waves-effect waves-light right modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
+    </div> -->
+    <div class="col s12 valign">
+      <br>
+      <div class="fixed-action-btn horizontal">
+        <a class="btn-floating btn-large right">
+          <i class="large material-icons">build</i>
+        </a>
+        <ul>
+          <li><a class="btn-floating waves-effect waves-light yellow darken-2 modal-trigger" href="#modal1"><i class="material-icons">playlist_add</i></a></li>
+          <li><a class="btn-floating waves-effect waves-light orange darken-1 modal-trigger" href="#edit-channel"><i class="material-icons">edit</i></a></li>
+          <li><a class="btn-floating waves-effect waves-light red"><i class="material-icons">delete_forever</i></a></li>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -68,6 +82,7 @@
 <!-- render partials for modals -->
 <%= render partial: "contributor/playlists/new" %>
 <%= render partial: "contributor/videos/new" %>
+<%= render partial: "contributor/channels/edit" %>
 
 
 <script>
@@ -106,6 +121,7 @@
     $('.new-video-button').click(function(){
       var videoUrl = $(this).data('video-url');
       $('#newVideoForm').attr('action', videoUrl);
-    })
+    });
+
   });
 </script>

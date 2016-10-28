@@ -104,3 +104,15 @@ nav {
     @extend .green-text, .text-accent-4;
   }
 }
+
+.fixed-action-btn.horizontal {
+  position: static;
+  ul {
+    position: static;
+    transform: translateY(0);
+    margin-right: .5em;
+    li {
+      margin: .75em .5em 0 0;
+    }
+  }
+}
