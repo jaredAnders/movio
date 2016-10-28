@@ -75,3 +75,32 @@ nav {
 .footer-links > li > a {
   @extend .white-text;
 }
+
+.new-video-button {
+  @extend .grey-text, .text-lighten-1;
+  transition: .3s ease-out;
+  &:hover {
+    @extend .green-text, .text-accent-4;
+  }
+}
+
+.video-list > li > .row {
+  @extend .white;
+  transition: .3s ease-out;
+  &:hover {
+    @extend .grey, .lighten-5;
+    .drag-handle > i {
+      @extend .grey-text, .text-lighten-1;
+      transition: .3s ease-out;
+    }
+  }
+}
+
+.drag-handle > i {
+  @extend .grey-text, .text-lighten-3;
+  transition: .3s ease-out;
+  &:hover {
+    @extend .green-text, .text-accent-4;
+    cursor: move;
+  }
+}
