@@ -11,17 +11,17 @@
   </div>
 
   <ul class="collection" id="playlist-list">
-    <% current_channel.playlists.rank(:row_order).each do |playlist| %>
+    <% current_channel.playlists.rank(:row_order).each do |playlist, i| %>
       <li class="collection-item" data-update-url="<%= contributor_playlist_path(playlist) %>">
-        <div class="row valign-wrapper white">
-          <div class="col s1 drag-handle">
-            <i class="material-icons right">more_vert</i>
+        <div class="row valign-wrapper">
+          <div class="col s1 list-action valign">
+            <i class="material-icons right"><b>::<span class="hide-on-small-only">:</span></b></i>
           </div>
           <div class="col s10">
-            <h4 class="title valign"><%= playlist.title %></h4>
+            <h5 class="title"><%= playlist.title %>:</h5>
           </div>
-          <div class="col s1">
-            <a class="modal-trigger new-video-button left" href="#modalV" data-video-url="<%= contributor_playlist_videos_path(playlist) %>"><i class="material-icons valign">add_circle</i></a>
+          <div class="col s1 list-action">
+            <a class="modal-trigger new-video-button" href="#modalV" data-video-url="<%= contributor_playlist_videos_path(playlist) %>"><i class="material-icons valign left">add_circle</i></a>
           </div>
         </div>
         <div class="divider"></div>
@@ -31,8 +31,8 @@
                   <li data-update-url="<%= contributor_video_path(video) %>">
 
                     <div class="row valign-wrapper">
-                      <div class="col s1 drag-handle">
-                        <i class="material-icons right">more_vert</i>
+                      <div class="col s1 list-action valign">
+                        <i class="material-icons right"><b>::<span class="hide-on-small-only">:</span></b></i>
                       </div>
                       <div class="col s11">
                         <h6><b><%= video.title %></b></h6>

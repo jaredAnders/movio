@@ -76,31 +76,31 @@ nav {
   @extend .white-text;
 }
 
-.new-video-button {
-  @extend .grey-text, .text-lighten-1;
+.video-list > li > .row, #playlist-list > li > .row {
+  @extend .white, .grey-text, .text-darken-2;
   transition: .3s ease-out;
   &:hover {
-    @extend .green-text, .text-accent-4;
-  }
-}
-
-.video-list > li > .row {
-  @extend .white;
-  transition: .3s ease-out;
-  &:hover {
-    @extend .grey, .lighten-5;
-    .drag-handle > i {
+    @extend .grey-text, .text-darken-4;
+    .list-action > i, .new-video-button {
       @extend .grey-text, .text-lighten-1;
       transition: .3s ease-out;
     }
   }
 }
 
-.drag-handle > i {
-  @extend .grey-text, .text-lighten-3;
+.list-action > i {
+  @extend .grey-text, .text-lighten-2;
   transition: .3s ease-out;
   &:hover {
     @extend .green-text, .text-accent-4;
     cursor: move;
+  }
+}
+
+.new-video-button {
+  @extend .grey-text, .text-lighten-2;
+  transition: .3s ease-out;
+  &:hover {
+    @extend .green-text, .text-accent-4;
   }
 }
