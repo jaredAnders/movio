@@ -1,6 +1,6 @@
 class Contributor::ChannelsController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_auth, only: [:show]
+  before_action :require_auth, only: [:show, :update]
 
   def new
     @channel = Channel.new
@@ -18,6 +18,15 @@ class Contributor::ChannelsController < ApplicationController
   def show
     @playlist = Playlist.new
     @video = Video.new
+  end
+
+  def update
+    current_channel.update_attributes(channel_params)
+    if current_channel.valid?
+      redirect_to contributor_channel_path(current_channel)
+    else
+      render :show, status: :unprocessable_entity
+    end
   end
 
   private

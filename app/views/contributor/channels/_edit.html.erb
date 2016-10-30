@@ -1,0 +1,40 @@
+<div id="edit-channel" class="modal">
+  <div class="close-modal-button">
+    <a href="#!" class="modal-action modal-close left"><i class="material-icons">cancel</i></a>
+  </div>
+  <div class="modal-content">
+    <%= simple_form_for current_channel, url: contributor_channel_path(current_channel), method: "PUT" do |f| %>
+      <div class="form-inputs">
+        <div class="input-field">
+          <%= f.input :title %>
+        </div>
+        <div class="input-field">
+          <%= f.input :description, input_html: {class: "materialize-textarea"} %>
+        </div>
+        <div class="input-field">
+          <%= f.input :cost, input_html: {class: "validate", type: "number", min: "0"} %>
+        </div>
+        <div class="file-field input-field">
+          <a class="btn">
+            <i class="material-icons left">file_upload</i>
+            Image
+            <%= f.input :image, label: false %>
+          </a>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect btn-flat red-text left">Cancel</a>
+      <div class="form-actions col s12">
+        <%= f.button :button, "Save changes", class: "waves-effect waves-light btn btn-flat green-text text-accent-4 right" %>
+      </div>
+
+    </div>
+
+  <% end %>
+</div>
