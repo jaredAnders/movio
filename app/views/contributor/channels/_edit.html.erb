@@ -1,8 +1,10 @@
-<div id="edit-channel" class="modal">
+<div id="edit-channel" class="modal modal-fixed-footer">
   <div class="close-modal-button">
     <a href="#!" class="modal-action modal-close left"><i class="material-icons">cancel</i></a>
   </div>
   <div class="modal-content">
+    <h3>Edit channel</h3>
+
     <%= simple_form_for current_channel, url: contributor_channel_path(current_channel), method: "PUT" do |f| %>
       <div class="form-inputs">
         <div class="input-field">

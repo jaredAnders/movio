@@ -1,6 +1,6 @@
 class Contributor::ChannelsController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_auth, only: [:show, :update]
+  before_action :require_auth, only: [:show, :update, :destroy]
 
   def new
     @channel = Channel.new
@@ -27,6 +27,11 @@ class Contributor::ChannelsController < ApplicationController
     else
       render :show, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    current_channel.destroy
+    redirect_to channels_path
   end
 
   private

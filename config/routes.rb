@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :playlists, only: [:update] do
       resources :videos, only: [:create]
     end
-    resources :channels, only: [:new, :create, :show, :update] do
+    resources :channels, only: [:new, :create, :show, :update, :destroy] do
       resources :playlists, only: [:create]
     end
   end

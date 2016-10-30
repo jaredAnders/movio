@@ -16,9 +16,12 @@
           <i class="large material-icons">build</i>
         </a>
         <ul>
-          <li><a class="btn-floating waves-effect waves-light yellow darken-2 modal-trigger" href="#modal1"><i class="material-icons">playlist_add</i></a></li>
-          <li><a class="btn-floating waves-effect waves-light orange darken-1 modal-trigger" href="#edit-channel"><i class="material-icons">edit</i></a></li>
-          <li><a class="btn-floating waves-effect waves-light red"><i class="material-icons">delete_forever</i></a></li>
+          <li><a class="btn-floating waves-effect waves-light orange lighten-1 modal-trigger" href="#modal1"><i class="material-icons">playlist_add</i></a></li>
+          <li><a class="btn-floating waves-effect waves-light orange modal-trigger" href="#edit-channel"><i class="material-icons">edit</i></a></li>
+          <li><%= link_to channel_path(current_channel), class: "btn-floating waves-effect waves-light orange darken-2" do %>
+              <i class="material-icons">remove_red_eye</i>
+          <% end %></li>
+          <li><a class="btn-floating waves-effect waves-light red modal-trigger" href="#delete-channel"><i class="material-icons">delete_forever</i></a></li>
         </ul>
       </div>
     </div>
@@ -83,6 +86,7 @@
 <%= render partial: "contributor/playlists/new" %>
 <%= render partial: "contributor/videos/new" %>
 <%= render partial: "contributor/channels/edit" %>
+<%= render partial: "contributor/channels/delete" %>
 
 
 <script>

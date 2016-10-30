@@ -1,0 +1,15 @@
+<div id="delete-channel" class="modal">
+  <div class="close-modal-button">
+    <a href="#!" class="modal-action modal-close left"><i class="material-icons">cancel</i></a>
+  </div>
+  <div class="modal-content">
+    <h3>Delete channel</h3>
+    <p>
+      <b>Warning:</b> Once you delete this channel it cannot be undone.
+    </p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect btn-flat red-text left">Cancel</a>
+    <%= link_to "delete", contributor_channel_path(current_channel), method: "DELETE", class: "waves-effect waves-light btn red right" %>
+  </div>
+</div>
