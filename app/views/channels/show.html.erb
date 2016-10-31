@@ -16,7 +16,7 @@
   <div class="row">
     <div class="col s12">
       <% if current_user && current_user.subscribed?(current_channel) %>
-        <%= link_to 'Continue', '#', class: 'waves-effect waves-light btn right' %>
+        <a class="btn disabled right"><span class="green-text text-accent-4">Subscribed</span></a>
       <% else %>
         <% if current_channel.free? %>
           <p class="left">FREE</p>

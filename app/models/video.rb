@@ -7,4 +7,12 @@ class Video < ActiveRecord::Base
 
   validates :title, presence: true
   validates :description, presence: true
+
+  def next_video
+    video = playlist.videos.where("row_order > ?", self.row_order).rank(:row_order).first
+    if video.blank? && playlist.next_playlist
+      return playlist.next_playlist.videos.rank(:row_order).first
+    end
+    video
+  end
 end
