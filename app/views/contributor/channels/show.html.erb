@@ -16,12 +16,12 @@
           <i class="large material-icons">build</i>
         </a>
         <ul>
-          <li><a class="btn-floating waves-effect waves-light orange lighten-1 modal-trigger" href="#modal1"><i class="material-icons">playlist_add</i></a></li>
-          <li><a class="btn-floating waves-effect waves-light orange modal-trigger" href="#edit-channel"><i class="material-icons">edit</i></a></li>
-          <li><%= link_to channel_path(current_channel), class: "btn-floating waves-effect waves-light orange darken-2" do %>
+          <li><a class="btn-floating waves-effect waves-light cyan accent-3 modal-trigger" href="#new-playlist"><i class="material-icons">playlist_add</i></a></li>
+          <li><a class="btn-floating waves-effect waves-light teal accent-3 modal-trigger" href="#edit-channel"><i class="material-icons">edit</i></a></li>
+          <li><%= link_to channel_path(current_channel), class: "btn-floating waves-effect waves-light teal accent-4" do %>
               <i class="material-icons">remove_red_eye</i>
           <% end %></li>
-          <li><a class="btn-floating waves-effect waves-light red modal-trigger" href="#delete-channel"><i class="material-icons">delete_forever</i></a></li>
+          <li><a class="btn-floating waves-effect waves-light purple accent-4 modal-trigger" href="#delete-channel"><i class="material-icons">delete_forever</i></a></li>
         </ul>
       </div>
     </div>
@@ -38,7 +38,7 @@
             <h5 class="title"><%= playlist.title %>:</h5>
           </div>
           <div class="col s1 list-action">
-            <a class="modal-trigger new-video-button" href="#modalV" data-video-url="<%= contributor_playlist_videos_path(playlist) %>"><i class="material-icons valign left">add_circle</i></a>
+            <a class="modal-trigger new-video-button" href="#new-video" data-video-url="<%= contributor_playlist_videos_path(playlist) %>"><i class="material-icons valign left">add_circle</i></a>
           </div>
         </div>
         <div class="divider"></div>
