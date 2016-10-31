@@ -1,28 +1,48 @@
 <div class="container">
-  <h2>Profile</h2>
-  <h4>User: <%= current_user.email %></h4>
+  <h3>My channels</h3>
+  <p class="flow-text"><%= current_user.email %></p>
 
   <% if current_user.subscribed_channels.present? %>
-    <h5>Subscribed Channels</h5>
-    <ul class="collection">
+    <ul class="collection with-header">
+      <li class="collection-header"><h5>Subscribed</h5></li>
       <% current_user.subscribed_channels.each do |channel| %>
-        <li class="collection-item">
-          <%= channel.title %>
+        <li class="collection-item row valign-wrapper">
+            <div class="col s6 m8">
+              <%= channel.title %>
+            </div>
+            <div class="col s6 m4 center-align">
+              <%= link_to "Continue", channels_path(channel), class: "btn btn-flat green-text text-accent-4" %>
+            </div>
         </li>
       <% end %>
     </ul>
-
+  <% else %>
+    <div class="row center-align">
+      <p class="flow-text">
+        <%= image_tag "t-rex.png", class: "responsive-img", id:"dino-img" %>
+        <br>
+        <b>You haven't subscribed to any channels yet!</b>
+        <br>
+        <%= link_to "Explore the latest technologies", channels_path, class: "green-text text-accent-4" %>, unless you want to become a dinosaur.
+      </p>
+    </div>
   <% end %>
 
   <% if current_user.channels.present? %>
-    <h5>Created Channels</h5>
-    <ul class="collection">
+    <ul class="collection with-header">
+      <li class="collection-header"><h5>Created</h5></li>
       <% current_user.channels.each do |channel| %>
-        <li class="collection-item">
-          <%= channel.title %>
+        <li class="collection-item row valign-wrapper">
+            <div class="col s6 m8">
+              <%= channel.title %>
+            </div>
+            <div class="col s6 m4 center-align">
+              <%= link_to "Edit", contributor_channel_path(channel), class: "btn btn-flat green-text text-accent-4" %>
+            </div>
         </li>
       <% end %>
     </ul>
-
+  <% else %>
+    <p>You have not created any channels. If you want to </p>
   <% end %>
 </div>

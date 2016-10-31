@@ -37,6 +37,7 @@ nav {
   background: linear-gradient(rgba(15,0,0,.25), rgba(5,0,0,.75)), url('rocket-launch.jpeg') no-repeat top center;
   background-size: cover;
   height: 92vh;
+  margin-bottom: -20px;
   h1, h3, h5 {
     color: rgba(white,.9);
   }
@@ -127,4 +128,8 @@ nav {
     max-width: 70%;
     margin: 0;
   }
+}
+
+#dino-img{
+  filter: saturate(0%);
 }
