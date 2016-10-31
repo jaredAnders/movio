@@ -51,18 +51,32 @@
   <ul class="collection">
     <% current_channel.playlists.rank(:row_order).each do |playlist| %>
       <li class="collection-item">
-        <h5 class="title"><%= playlist.title %></h5>
-          <div class="collection video-links">
-            <div class="divider"></div>
-            <% playlist.videos.rank(:row_order).each do |video| %>
-              <%= link_to video_path(video), class: "collection-item" do %>
-                <div class="section video-link">
-                  <h6><b><%= video.title %></b></h6>
-                  <span class="truncate"><%= video.description %></span>
+        <div class="row valign-wrapper">
+          <div class="col s12 valign">
+            <h5 class="title"><%= playlist.title %></h5>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <p>
+          <ul class="video-list">
+          <% playlist.videos.rank(:row_order).each do |video| %>
+            <li>
+              <%= link_to video_path(video) do %>
+                <div class="row valign-wrapper">
+                  <div class="col s1">
+                    <i class="material-icons play-video-button left">play_arrow</i>
+                  </div>
+                  <div class="col s11">
+                    <h6><b><%= video.title %></b></h6>
+                    <span class="truncate"><%= video.description %></span>
+                  </div>
                 </div>
               <% end %>
-            <% end %>
-          </div>
+            </li>
+          <% end %>
+          </ul>
+        </p>
+
       </li>
     <% end %>
   </ul>
