@@ -43,6 +43,13 @@
       <% end %>
     </ul>
   <% else %>
-    <p>You have not created any channels. If you want to </p>
+    <div class="divider"></div>
+    <div class="row center-align">
+      <p class="flow-text">
+      <b>You haven't created any channels.</b>
+      If you'd like to add a topic, feel free to
+      <%= link_to "create a new channel", new_contributor_channel_path, class: "green-text text-accent-4" %>.
+      </p>
+    </div>
   <% end %>
 </div>
