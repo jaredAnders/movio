@@ -15,16 +15,24 @@
  *= require jquery-ui
  */
 
+
+//import materialize library and set palette
 @import "materialize/components/color";
 $primary-color: color("grey", "darken-3") !default;
 $secondary-color: color("green", "accent-4") !default;
 @import "materialize", "https://fonts.googleapis.com/icon?family=Material+Icons";
 
+//global
 body {
   background: color("grey", "lighten-3");
 }
 
+::selection {
+  background: color("green", "accent-1");
+  color: white;
+}
 
+//navbar
 nav {
   background-color: lighten(black,12%);
 }
@@ -33,6 +41,17 @@ nav {
   cursor: pointer;
 }
 
+//footer
+.footer-links > li > a {
+  @extend .white-text;
+}
+
+//errors
+.error {
+  color: red;
+}
+
+//homepage
 .hero {
   background: linear-gradient(rgba(15,0,0,.25), rgba(5,0,0,.75)), url('rocket-launch.jpeg') no-repeat top center;
   background-size: cover;
@@ -43,45 +62,29 @@ nav {
   }
 }
 
-
-::selection {
-  background: color("green", "accent-1");
-  color: white;
-}
-
-.error {
-  color: red;
-}
-
-.video-links {
-  border: none;
-}
-
-.collection a.collection-item {
-  color: rgba(0,0,0,.87);
-}
-
-.close-modal-button {
-  padding: .5em;
-  a {
-    @extend .grey-text, .text-lighten-2;
-    transition: .3s ease-out;
-    &:hover {
-      cursor: pointer;
-      @extend .grey-text, .text-lighten-1;
+//fab menu
+.fixed-action-btn.horizontal {
+  position: static;
+  ul {
+    position: static;
+    transform: translateY(0);
+    margin-right: .5em;
+    li {
+      margin: .75em .5em 0 0;
     }
   }
 }
 
-.footer-links > li > a {
-  @extend .white-text;
+//playlist-video collections
+.collection a.collection-item {
+  color: rgba(0,0,0,.87);
 }
 
 .video-list > li > .row, .video-list > li > a > .row, #playlist-list > li > .row {
   @extend .white, .grey-text, .text-darken-2;
   transition: .3s ease-out;
   &:hover {
-    @extend .grey-text, .text-darken-4;
+    @extend .grey-text, .text-darken-3;
     .list-action > i, .new-video-button, .play-video-button {
       @extend .grey-text, .text-lighten-1;
       transition: .3s ease-out;
@@ -110,14 +113,15 @@ nav {
   transition: .3s ease-out;
 }
 
-.fixed-action-btn.horizontal {
-  position: static;
-  ul {
-    position: static;
-    transform: translateY(0);
-    margin-right: .5em;
-    li {
-      margin: .75em .5em 0 0;
+//modals
+.close-modal-button {
+  padding: .5em;
+  a {
+    @extend .grey-text, .text-lighten-2;
+    transition: .3s ease-out;
+    &:hover {
+      cursor: pointer;
+      @extend .grey-text, .text-lighten-1;
     }
   }
 }
@@ -130,6 +134,7 @@ nav {
   }
 }
 
+//img
 #dino-img{
   filter: saturate(0%);
 }
