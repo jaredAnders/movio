@@ -1,28 +1,19 @@
-== README
+= Movio
+Movio is a video streaming app built on Rails 4.1.9 to fulfill part of the {Firehose Project}[https://www.thefirehoseproject.com/] curriculum. The goal was to develop a platform that manages user roles, subscriptions, video streaming and accepts payments.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+== Concepts/Technologies explored
+* User roles/privileges
+* Subscriptions
+* Stripe[https://stripe.com/]
+* Incorporating AJAX requests in Rails
+* Touchable/draggable interface
+* MiniMagick[https://github.com/minimagick/minimagick]
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+= Usage/Suggestions
+* Try creating your own channel. The admin interface has some unique functionality.
+* The video player currently loads from a CDN, so you might need to allow loading of insecure scripts on video pages.
+
+==TODO
+* Add a button to return to channel on last video
+* Allow contributors to add YouTube videos

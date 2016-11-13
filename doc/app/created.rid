@@ -1,0 +1,27 @@
+Sun, 13 Nov 2016 21:45:47 +0000
+README.rdoc	Sun, 13 Nov 2016 21:52:50 +0000
+app/controllers/application_controller.rb	Wed, 26 Oct 2016 15:00:04 +0000
+app/controllers/channels_controller.rb	Wed, 26 Oct 2016 15:00:04 +0000
+app/controllers/contributor/channels_controller.rb	Sun, 30 Oct 2016 23:11:14 +0000
+app/controllers/contributor/playlists_controller.rb	Thu, 27 Oct 2016 13:28:14 +0000
+app/controllers/contributor/videos_controller.rb	Thu, 27 Oct 2016 19:42:11 +0000
+app/controllers/dashboards_controller.rb	Wed, 26 Oct 2016 20:01:07 +0000
+app/controllers/static_pages_controller.rb	Wed, 26 Oct 2016 15:00:04 +0000
+app/controllers/subscriptions_controller.rb	Wed, 26 Oct 2016 15:00:04 +0000
+app/controllers/videos_controller.rb	Wed, 26 Oct 2016 15:00:04 +0000
+app/helpers/application_helper.rb	Wed, 26 Oct 2016 15:00:04 +0000
+app/helpers/channels_helper.rb	Wed, 26 Oct 2016 15:00:04 +0000
+app/helpers/contributor/channels_helper.rb	Wed, 26 Oct 2016 15:00:04 +0000
+app/helpers/contributor/playlists_helper.rb	Wed, 26 Oct 2016 15:00:04 +0000
+app/helpers/contributor/videos_helper.rb	Wed, 26 Oct 2016 15:00:04 +0000
+app/helpers/dashboards_helper.rb	Wed, 26 Oct 2016 19:54:20 +0000
+app/helpers/static_pages_helper.rb	Wed, 26 Oct 2016 15:00:04 +0000
+app/helpers/subscriptions_helper.rb	Wed, 26 Oct 2016 15:00:04 +0000
+app/helpers/videos_helper.rb	Wed, 26 Oct 2016 15:00:04 +0000
+app/models/channel.rb	Sun, 30 Oct 2016 23:13:51 +0000
+app/models/playlist.rb	Mon, 31 Oct 2016 12:34:08 +0000
+app/models/subscription.rb	Wed, 26 Oct 2016 15:00:04 +0000
+app/models/user.rb	Wed, 26 Oct 2016 15:00:04 +0000
+app/models/video.rb	Mon, 31 Oct 2016 12:38:03 +0000
+app/uploaders/image_uploader.rb	Wed, 26 Oct 2016 15:00:04 +0000
+app/uploaders/video_uploader.rb	Wed, 26 Oct 2016 15:00:04 +0000
