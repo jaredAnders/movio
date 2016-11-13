@@ -3,16 +3,17 @@
   <p><%= current_channel.description %></p>
   <div class="divider"></div>
   <div class="row valign-wrapper">
-    <div class="col s12 valign">
+    <div class="hide-on-small-only col m6"></div>
+    <div class="col s12 m6 valign">
       <br>
       <div class="fixed-action-btn horizontal">
         <a class="btn-floating btn-large right">
           <i class="large material-icons">build</i>
         </a>
         <ul>
-          <li><a class="btn-floating waves-effect waves-light teal accent-2 modal-trigger" href="#new-playlist"><i class="material-icons">playlist_add</i></a></li>
-          <li><a class="btn-floating waves-effect waves-light teal accent-3 modal-trigger" href="#edit-channel"><i class="material-icons">edit</i></a></li>
-          <li><%= link_to channel_path(current_channel), class: "btn-floating waves-effect waves-light teal accent-4" do %>
+          <li><a class="btn-floating waves-effect waves-light cyan lighten-2 modal-trigger" href="#new-playlist"><i class="material-icons">playlist_add</i></a></li>
+          <li><a class="btn-floating waves-effect waves-light cyan modal-trigger" href="#edit-channel"><i class="material-icons">edit</i></a></li>
+          <li><%= link_to channel_path(current_channel), class: "btn-floating waves-effect waves-light cyan darken-1" do %>
               <i class="material-icons">remove_red_eye</i>
           <% end %></li>
           <li><a class="btn-floating waves-effect waves-light purple accent-4 modal-trigger" href="#delete-channel"><i class="material-icons">delete_forever</i></a></li>
