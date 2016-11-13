@@ -1,12 +1,12 @@
 = Movio
-Movio is a video streaming app built on Rails 4.1.9 to fulfill part of the {Firehose Project}[https://www.thefirehoseproject.com/] curriculum. The goal was to develop a platform that manages user roles, subscriptions, video streaming and accepts payments.
+Movio is a video streaming app built on Rails 4.1.9 to fulfill part of the {Firehose Project}[https://www.thefirehoseproject.com/] curriculum. The goal was to develop a platform that manages user roles and subscriptions, allows video streaming and accepts payments.
 
 == Concepts/Technologies explored
 * User roles/privileges
 * Subscriptions
 * Stripe[https://stripe.com/]
-* Incorporating AJAX requests in Rails
-* Touchable/draggable interface
+* Utilizing AJAX requests in Rails
+* Draggable UI
 * MiniMagick[https://github.com/minimagick/minimagick]
 
 
@@ -17,3 +17,4 @@ Movio is a video streaming app built on Rails 4.1.9 to fulfill part of the {Fire
 ==TODO
 * Add a button to return to channel on last video
 * Allow contributors to add YouTube videos
+* Load video player from server
