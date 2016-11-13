@@ -5,8 +5,19 @@
     <div class="section">
       <h3><%= channel.title %></h3>
       <p><%= channel.description %></p>
-      <p class="left"><%= number_to_currency channel.cost %></p>
-      <%= link_to 'Learn More', channel_path(channel), class: 'waves-effect waves-light btn-flat right green-text' %>
+
+      <% if current_user && current_user.subscribed?(channel) %>
+        <p class="left grey-text">Subscribed</p>
+        <%= link_to 'Continue', channel_path(channel), class: 'waves-effect waves-light btn-flat right green-text' %>
+      <% else %>
+        <% if channel.free? %>
+          <p class="left">FREE</p>
+        <% else %>
+          <p class="left"><%= number_to_currency channel.cost %></p>
+        <% end %>
+        <%= link_to 'Learn More', channel_path(channel), class: 'waves-effect waves-light btn-flat right green-text' %>
+      <% end %>
+
       <br>
       <br>
     </div>
