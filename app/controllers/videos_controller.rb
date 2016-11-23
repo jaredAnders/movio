@@ -13,7 +13,7 @@ class VideosController < ApplicationController
     end
   end
 
-  helper_method :current_video
+  helper_method :current_video, :current_channel
   def current_video
     @current_video ||= Video.find(params[:id])
   end

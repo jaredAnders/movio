@@ -12,17 +12,5 @@
       </p>
     </noscript>
   </video>
-
-  <% if current_video.next_video.present? %>
-    <div class="row center">
-      <br>
-      <%= link_to video_path(current_video.next_video), class: "waves-effect waves-light btn" do %>
-        <span>Next Video</span>
-        <i class="material-icons right">play_arrow</i>
-      <% end %>
-    </div>
-
-  <% end %>
-
-
+  <%= render 'buttons' %>
 </div>

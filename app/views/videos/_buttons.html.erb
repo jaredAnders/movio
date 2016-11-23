@@ -1,0 +1,25 @@
+
+<div class="row">
+<br>
+  <% if current_video.next_video.present? %>
+    <div class="col s6">
+      <%= link_to channel_path(current_channel), class: "btn btn-flat waves-effect left" do %>
+        <i class="material-icons left">chevron_left</i>
+        <span>Back to channel</span>
+      <% end %>
+    </div>
+    <div class="col s6">
+      <%= link_to video_path(current_video.next_video), class: "waves-effect waves-light btn right" do %>
+        <span>Next Video</span>
+        <i class="material-icons right">play_arrow</i>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="col s12 center">
+      <%= link_to channel_path(current_channel), class: "btn btn-flat waves-effect" do %>
+        <i class="material-icons left">chevron_left</i>
+        <span>Back to channel</span>
+      <% end %>
+    </div>
+  <% end %>
+</div>
