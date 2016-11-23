@@ -1,5 +1,5 @@
-Sun, 13 Nov 2016 21:50:08 +0000
-README.rdoc	Sun, 13 Nov 2016 21:57:41 +0000
+Wed, 23 Nov 2016 16:06:50 +0000
+README.rdoc	Wed, 23 Nov 2016 16:14:44 +0000
 app/controllers/application_controller.rb	Wed, 26 Oct 2016 15:00:04 +0000
 app/controllers/channels_controller.rb	Wed, 26 Oct 2016 15:00:04 +0000
 app/controllers/contributor/channels_controller.rb	Sun, 30 Oct 2016 23:11:14 +0000
@@ -8,7 +8,7 @@ app/controllers/contributor/videos_controller.rb	Thu, 27 Oct 2016 19:42:11 +0000
 app/controllers/dashboards_controller.rb	Wed, 26 Oct 2016 20:01:07 +0000
 app/controllers/static_pages_controller.rb	Wed, 26 Oct 2016 15:00:04 +0000
 app/controllers/subscriptions_controller.rb	Wed, 26 Oct 2016 15:00:04 +0000
-app/controllers/videos_controller.rb	Wed, 26 Oct 2016 15:00:04 +0000
+app/controllers/videos_controller.rb	Wed, 23 Nov 2016 16:04:10 +0000
 app/helpers/application_helper.rb	Wed, 26 Oct 2016 15:00:04 +0000
 app/helpers/channels_helper.rb	Wed, 26 Oct 2016 15:00:04 +0000
 app/helpers/contributor/channels_helper.rb	Wed, 26 Oct 2016 15:00:04 +0000
