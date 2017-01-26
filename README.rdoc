@@ -13,7 +13,7 @@ https://s3.amazonaws.com/poly-screenshots.angel.co/Project/6b/452214/d86b7bb23f4
 * {Materialize css framework}[http://materializecss.com/]
 
 
-= Usage/Suggestions
+== Usage/Suggestions
 * Try creating your own channel. The admin interface has some unique functionality.
 * The video player currently loads from a CDN, so you might need to allow loading of insecure scripts on video pages.
 
