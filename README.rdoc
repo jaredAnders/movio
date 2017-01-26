@@ -6,7 +6,7 @@ https://s3.amazonaws.com/poly-screenshots.angel.co/Project/6b/452214/d86b7bb23f4
 == Concepts & Technologies explored
 * User roles/privileges
 * Subscriptions
-* Stripe API[https://stripe.com/]
+* {Stripe API}[https://stripe.com/]
 * Utilizing AJAX requests in Rails
 * Draggable UI
 * MiniMagick[https://github.com/minimagick/minimagick]
@@ -16,6 +16,8 @@ https://s3.amazonaws.com/poly-screenshots.angel.co/Project/6b/452214/d86b7bb23f4
 == Usage/Suggestions
 * Try creating your own channel. The admin interface has some unique functionality.
 * The video player currently loads from a CDN, so you might need to allow loading of insecure scripts on video pages.
+
+https://s3.amazonaws.com/poly-screenshots.angel.co/Project/6b/452214/038d03ad399f1345dd3693a752fa39d8-original.png
 
 ==TODO
 * Allow contributors to add YouTube videos
